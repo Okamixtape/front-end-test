@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1441px" height="537px" viewBox="0 0 1441 537" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>grafica sfondo@2x</title>
+    <g id="Mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(1.000000, -3971.000000)">
+            <g id="TAB" transform="translate(-1.000000, 3146.000000)">
+                <g id="grafica-sfondo" transform="translate(0.000000, 825.000000)">
+                    <path d="M345,0.493879723 C766.74669,0.493879723 1138.83599,213.102458 1359.93561,536.987341 L1,537 L0.984798059,49.3324036 C110.141474,17.5402232 225.580044,0.493879723 345,0.493879723 Z" id="Path" fill="#ED6562"></path>
+                    <path d="M1440.9847,281.151549 L1441,537 L1033.5418,536.986316 C1150.11112,426.78457 1288.25985,339.171877 1440.9847,281.151549 Z" id="Path" fill="#F07C79"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
