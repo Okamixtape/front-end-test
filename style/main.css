@@ -25,7 +25,7 @@ header {
   list-style-type: none;
 }
 
-a {
+.navbar__list a {
   font-family: Roboto Mono, sans-serif;
   font-weight: 500;
   font-size: 1.3rem;
@@ -146,32 +146,58 @@ section#slider {
   position: relative;
 }
 
- News section */
 .news-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 3rem;
+  background-color: #272727;
 }
 
 .news-item {
   background: white;
   position: relative;
-  overflow: hidden;
+  width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.news-item img {
+.news-item:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.news-image-container {
+  position: relative;
+}
+
+.news-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-image: linear-gradient(rgba(39, 39, 39, 0) 0%, rgba(39, 39, 39, 1) 100%);
+  z-index: 1;
+}
+
+.news-image-container img {
   width: 100%;
   height: auto;
   transform: scaleX(-1);
+  position: relative;
+  z-index: 0;
 }
 
 .news-content {
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 .news-date {
   color: #F07C79;
   font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .news-item h2 {
@@ -188,14 +214,17 @@ section#slider {
   text-overflow: ellipsis;
 }
 
-.news-item:hover p {
-  height: auto;
+.news-item:hover .news-date {
+  color: white;
 }
 
-.news-item:hover .news-content {
-  background-color: #F07C79;
+.news-item:hover h2, 
+.news-item:hover p {
   color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.news-item:hover {
+  background-color: #F07C79; 
 }
 
 .wave-background img {
@@ -207,7 +236,6 @@ section#slider {
   overflow: visible;
 }
 
- Section below news */
 section#path {
   background-color: #272727;
   color: white;
@@ -216,11 +244,225 @@ section#path {
   z-index: -1;
 }
 
+#tabs {
+  background-color: #272727;
+  padding: 2rem 3.75rem 9.125rem 3.75rem;
+  background-image: url("../assets/TAB/grafica_sfondo.svg");
+  background-size: 100% auto;
+  background-repeat: no-repeat; 
+  background-position: bottom center; 
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 2.125rem 2.5rem 4.375rem 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab h2 {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 2.125rem;
+  margin: 0 0 1.875rem 0;
+  padding: 0 0 1rem 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  width: 100%;
+}
+
+.tab-circled-image {
+  position: relative;
+  margin-bottom: 2.125rem;
+}
+
+.tab-circle {
+  width: 102%;
+  height: 106%;
+  background-color: #ED6562;
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  top: 51%;
+  transform: translateX(0%) translateY(-50%);
+  z-index: 0;
+}
+
+.tab:nth-child(2) .tab-circle {
+  background-color: #E2CA40; 
+}
+
+.tab:nth-child(3) .tab-circle {
+  background-color: #28AFB0; 
+}
+
+.tab img {
+  max-width: 100%;
+  height: 234px;
+  position: relative;
+  z-index: 1;
+}
+
+.tab p {
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.tab:hover p {
+  color: white;
+}
+
+.tab-cta-button {
+  color: white;
+  padding: 1.25rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+.tab.-rosa:hover {
+  background-color: #F07C79;
+}
+
+.tab.-rosa .tab-cta-button{
+  background-color: #F07C79;
+}
+
+.tab.-rosa:hover h2 {
+  color: white;
+}
+
+.tab.-rosa:hover .tab-cta-button {
+  background-color: white;
+  color: #F07C79;
+}
+
+.tab.-rosa h2 {
+  color: #F07C79;
+}
+
+.tab.-gialla:hover {
+  background-color: #F1C40F;
+}
+
+.tab.-gialla h2 {
+  color: #E2CA40;
+}
+
+.tab.-gialla:hover h2 {
+  color: white;
+}
+
+.tab.-gialla .tab-cta-button{
+  background-color: #E2CA40;
+}
+
+.tab.-gialla:hover .tab-cta-button {
+  background-color: white;
+  color: #E2CA40;
+}
+
+.tab.-turchese:hover {
+  background-color: #1ABC9C;
+}
+
+.tab.-turchese h2 {
+  color: #28AFB0;
+}
+
+.tab.-turchese:hover h2 {
+  color: white;
+}
+
+.tab.-turchese .tab-cta-button{
+  background-color: #28AFB0;
+}
+
+.tab.-turchese:hover .tab-cta-button {
+  background-color: white;
+  color: #28AFB0;
+}
+
 footer {
   background-color: #272727;
   color: white;
   text-align: center;
-  padding: 1em;
+  padding: 5rem 3.75rem;
+}
+
+.footer-logo { 
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.footer-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-left-container {
+  text-align: left;
+}
+
+.footer-links {
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a,
+.copyright p {
+  color: rgba(255, 255, 255, 1);
+  font-family: Roboto mono, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0 0.25rem;
+  margin: 0;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.social-media-text {
+  color: rgba(255, 255, 255, 1);
+  font-family: Roboto mono, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.social-media-icons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.social-media-icons-container img {
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 @media (max-width: 768px) {
