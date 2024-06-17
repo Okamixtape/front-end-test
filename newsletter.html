@@ -3,38 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <title>Newsletter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <style>
         /* Styles inline pour compatibilité avec les clients de messagerie */
         body {
             font-family: Arial, sans-serif;
+            margin-top: 2px;
         }
         .container {
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
         }
-        .header, .footer {
-            background-color: #333;
+        .header {
+            position: relative;
+            background-color: #272727;
+            height: 246px; /* Hauteur fixe pour l'en-tête */
+            background-image: url('assets/ONDE_COLORATE/onda-bianco-grigio.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .logo {
+            position: absolute;
+            top: 40%;
+            right: 10%;
+            transform: translateY(-50%);
+            width: 164px;
+        }
+
+        .content-article {
+            background-color: #272727;
+            color: #F07C79; /* Couleur du texte */
+            text-align: start;
+            padding: 1.625rem 3.125rem 3.5rem;
+        }
+
+        .content-article h1 {
+            color: #F07C79; /* Couleur du titre */
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 3.125rem;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .content-article p {
+            color: #ffffff; /* Couleur du paragraphe */
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.25rem;
+            letter-spacing: 0.1;
+            margin-bottom: 5.75rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F07C79; /* Couleur du bouton */
+            color: #ffffff;
+            padding: 0.875rem 1.25rem;
+            border-radius: 1rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding: 1.875rem 3.125rem;
+        }
+        
+        .tab-circled-image {
+            position: relative;
+        }
+
+        .tab-circle {
+            width: 108%;
+            height: 108%;
+            background-color: #f1c40f;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateX(0%) translateY(-50%);
+            z-index: -1;
+        }
+
+        .tab:nth-child(2) .tab-circle {
+            background-color: #1ABC9C; /* Couleur du cercle du deuxième onglet */
+        }
+
+        .tab:nth-child(3) .tab-circle {
+            background-color: #F1C40F; /* Couleur du cercle du troisième onglet */
+        }
+
+        .tab.-reversed {
+            flex-direction: row-reverse;
+        }
+
+        .tab.-reversed .tab-circle {
+            left: auto;
+            right: 0;
+        }
+
+        .tab:last-child {
+            border-bottom: none;
+        }
+
+        .tab-image {
+            width: 194px;
+            height: auto;
+        }
+
+        .tab-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tab-content h2 {
+            color: #F07C79; /* Couleur du titre */
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .tab-content p {
+            color: #333333; /* Couleur du paragraphe */
+            font-size: 1rem;
+            font-weight: 400;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.5rem;
+        }
+
+        .read-more {
+            color: #F07C79; /* Couleur du lien */
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            text-align: end;
+        }
+
+        .tab:nth-child(2) .tab-content h2 {
+            color: #1ABC9C; /* Couleur du titre du deuxième onglet */
+        }
+
+        .tab:nth-child(2) .read-more {
+            color: #1ABC9C; /* Couleur du lien du deuxième onglet */
+        }
+
+        .tab:nth-child(3) .tab-content h2 {
+            color: #F1C40F; /* Couleur du titre du troisième onglet */
+        }
+
+        .tab:nth-child(3) .read-more {
+            color: #F1C40F; /* Couleur du lien du troisième onglet */
+        }
+
+        .footer {
+            background-color: #272727;
             color: white;
             text-align: center;
-            padding: 1em;
+            padding: 2.875rem 2rem;
         }
-        .content {
-            padding: 2em;
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 2.125rem;
+        }
+
+        .social-icons {
+            margin-bottom: 2.75rem;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 0.25rem;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-links {
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .footer-links a {
+            color: white;
+            font-family: Roboto Mono, Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Titre de la Newsletter</h1>
+            <img src="assets/LOGHI/LOGO BIANCO.svg" alt="white logo" class="logo">
         </div>
         <div class="content">
-            <p>Contenu principal de la newsletter...</p>
+            <div class="content-article">
+                <h1>Sed diam nonummy nibh euismod tincidunt?</h1>
+                <p>Lorem ipsum dolor sit amet ed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.</p>
+                <a href="#" class="cta-button">CALL TO ACTION</a>
+            </div>            
+            <div class="content-tabs">
+                <div class="tab">
+                    <div class="tab-circled-image">
+                        <div class="tab-circle"></div>
+                        <img src="assets/TAB/sveglia.png" alt="Clock Image" class="tab-image">
+                    </div>
+                    <div class="tab-content">
+                        <h2>Lorem Ipsum</h2>
+                        <p>Lorem quam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci magna aliquam erat volutpat.</p>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+                <div class="tab -reversed">
+                    <div class="tab-circled-image">
+                        <div class="tab-circle"></div>
+                        <img src="assets/TAB/razzo.png" alt="Rocket Image" class="tab-image">
+                    </div>
+                    <div class="tab-content">
+                        <h2>Lorem Ipsum</h2>
+                        <p>Lorem quam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci magna aliquam erat volutpat.</p>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+                <div class="tab">
+                    <div class="tab-circled-image">
+                        <div class="tab-circle"></div>
+                        <img src="assets/TAB/target.png" alt="Target Image" class="tab-image">
+                    </div>
+                    <div class="tab-content">
+                        <h2>Lorem Ipsum</h2>
+                        <p>Lorem quam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci magna aliquam erat volutpat.</p>
+                        <a href="#" class="read-more">read more</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="footer">
-            <p>Pied de page de la newsletter</p>
-        </div>
+            <img src="assets/LOGHI/LOGO BIANCO.svg" alt="Footer Logo" class="footer-logo">
+            <div class="social-icons">
+                <a href="#"><img src="assets/ICO/social/FB.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/ICO/social/TW.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/ICO/social/IG.png" alt="Instagram"></a>
+                <a href="#"><img src="assets/ICO/social/LI.png" alt="LinkedIn"></a>
+                <a href="#"><img src="assets/ICO/social/YT.png" alt="YouTube"></a>
+            </div>
+            <p class="footer-links">
+                <a href="#">Cancella iscrizione</a> | 
+                <a href="#">Condizioni di utilizzo</a> | 
+                <a href="#">Privacy</a> | 
+                <a href="#">Centro assistenza</a>
+            </p>
+        </div>        
     </div>
 </body>
 </html>

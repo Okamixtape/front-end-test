@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webpage</title>
     <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -16,16 +15,16 @@
         <nav>
             <ul class="navbar__list">
                 <li>
-                  <a href="#slider">Slider</a>
+                  <a class="navbar-item" href="#slider">Slider</a>
                 </li>
                 <li>
-                  <a href="#news">News</a>
+                  <a class="navbar-item" href="#news">News</a>
                 </li>
                 <li>
-                  <a href="#path">Percorso</a>
+                  <a class="navbar-item" href="#path">Percorso</a>
                 </li>
                 <li>
-                  <a href="#tab">Tab</a>
+                  <a class="navbar-item" href="#tabs">Tab</a>
                 </li>
             </ul>
         </nav>
@@ -89,7 +88,7 @@
       </section>
       <section id="news">
         <div class="wave-background">
-          <img src="assets/ONDE COLORATE/onda-bianco-grigio.svg" alt="Wave Background">
+          <img src="assets/ONDE_COLORATE/onda-bianco-grigio.svg" alt="Wave Background">
         </div>
         <div class="news-container">
           <div class="news-item">
@@ -118,16 +117,107 @@
           </div>
         </div>
     </section>
-    <section id="path">
-      
+    <section id="path" class="timeline">
+      <div class="timeline-item left" (1)">
+        <div class="timeline-icon">1</div>
+        <div class="timeline-content" id="desc1">
+          <h2>Titre 1</h2>
+          <p>Description pour l'icône 1</p>
+        </div>
+      </div>
+      <div class="timeline-item right" (2)">
+        <div class="timeline-icon">2</div>
+        <div class="timeline-content" id="desc2">
+          <h2>Titre 2</h2>
+          <p>Description pour l'icône 2</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-icon">3</div>
+        <div class="timeline-content" id="desc3">
+          <h2>Titre 3</h2>
+          <p>Description pour l'icône 3</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-icon">4</div>
+        <div class="timeline-content" id="desc4">
+          <h2>Titre 4</h2>
+          <p>Description pour l'icône 4</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-icon">5</div>
+        <div class="timeline-content" id="desc5">
+          <h2>Titre 5</h2>
+          <p>Description pour l'icône 5</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-icon">6</div>
+        <div class="timeline-content" id="desc6">
+          <h2>Titre 6</h2>
+          <p>Description pour l'icône 6</p>
+        </div>
+      </div>
     </section>
-    <section id="tab">
-        <!-- Tab -->
+    <section id="tabs">
+      <div class="tabs-container">
+        <div class="tab -rosa">
+          <h2>Tab rosa</h2>
+          <img class="tab-image" src="assets/TAB/sveglia.png" alt="sveglia">
+          <p>Description pour l'onglet 1</p>
+          <button class="tab-cta-button">Call to Action</button>
+        </div>
+        <div class="tab -gialla">
+          <h2>Tab Gialla</h2>
+          <img class="tab-image" src="assets/TAB/target.png" alt="target">
+          <p>Description pour l'onglet 1</p>
+          <button class="tab-cta-button">Call to Action</button>
+        </div>
+        <div class="tab -turchese">
+          <h2>Tab turchese</h2>
+          <img  class="tab-image"src="assets/TAB/razzo.png" alt="razzo">
+          <p>Description pour l'onglet 1</p>
+          <button class="tab-cta-button">Call to Action</button>
+        </div>
+      </div>
     </section>
     </main>
     <footer>
-        <!-- Pied de page -->
-    </footer>
+      <div class="footer-content">
+        <div class="footer-top-container">
+          <div class="footer-logo">
+            <img src="assets/LOGHI/LOGO BIANCO.svg" alt="Logo">
+          </div>
+        </div>
+        <div class="footer-bottom-container">
+          <div class="footer-bottom-left-container">
+            <div class="footer-links">
+              <a href="#">Terms & conditions</a> | 
+              <a href="#">Privacy policy</a> | 
+              <a href="#">Cookies policy</a> | 
+              <a href="#">Copyrights Notification</a>
+            </div>
+            <div class="copyright">
+              <p>Copyright © 2020 Logotel. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="footer-bottom-right-container">
+            <div class="social-media">
+              <span class="social-media-text">SEGUICI SUI SOCIAL:</span>
+              <div class="social-media-icons-container">
+                <a href="#"><img src="assets/ICO/social/FB.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/ICO/social/TW.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/ICO/social/IG.png" alt="Instagram"></a>
+                <a href="#"><img src="assets/ICO/social/LI.png" alt="LinkedIn"></a>
+                <a href="#"><img src="assets/ICO/social/YT.png" alt="YouTube"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </footer>
     <script src="javascript/main.js"></script>
 </body>
 </html>

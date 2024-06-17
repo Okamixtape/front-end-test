@@ -67,4 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize the slider
   showSlide(currentIndex);
+
+  function toggleDescription(id) {
+    for (let i = 1; i <= 6; i++) {
+      const desc = document.getElementById('desc' + i);
+      if (i === id) {
+        desc.style.visibility = desc.style.visibility === 'visible' ? 'hidden' : 'visible';
+      } else {
+        desc.style.visibility = 'hidden';
+      }
+    }
+  }
+  document.querySelectorAll('.timeline-icon').forEach((icon, index) => {
+    icon.addEventListener('click', () => {
+      toggleDescription(index + 1); // Les index commencent à 0, donc on ajoute 1
+    });
+  });
 });
