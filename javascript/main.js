@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.slider__slide');
   const buttons = document.querySelectorAll('.slider__lateralCounter__button');
   const totalSlides = slides.length;
-  const autoPlayInterval = 100000000; // 5 seconds
+  const autoPlayInterval = 5000; // 5 seconds
   let autoPlayTimer;
 
   // Set the background images for the slides
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   document.querySelectorAll('.timeline-icon').forEach((icon, index) => {
     icon.addEventListener('click', () => {
-      toggleDescription(index + 1); // Les index commencent à 0, donc on ajoute 1
+      toggleDescription(index + 1);
     });
   });
 });

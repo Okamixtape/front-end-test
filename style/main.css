@@ -16,7 +16,7 @@ header {
   opacity: 80%;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
 }
 
 .navbar__list {
@@ -232,14 +232,17 @@ section#slider {
   display: block;
   width: 100%;
   height: auto;
-  bottom: -60px;
+  bottom: -50px;
   overflow: visible;
 }
 
 section#path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #272727;
   color: white;
-  padding: 3rem;
+  padding: 8rem 3rem;
   position: relative;
   z-index: -1;
 }
